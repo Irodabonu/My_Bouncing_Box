@@ -1,0 +1,35 @@
+
+1.1 KiB
+Исходник
+Постоянная ссылка
+Вина
+История
+  
+<html>
+    <head>
+    </head>
+    <body style="background-color: black;">
+        <div id="my_bouncing_box" style= "background-color: blue; border-radius: 3px; position: absolute; left: 0px; top: 0px; min-width: 100px; min-height: 100px; text-align: center; font-weight: bold; color: #999;" > komilova_i </div>
+        <script type="text/javascript">
+         let box = document.querySelector("#my_bouncing_box");
+         let xSpeed = 4, ySpeed= 4;
+         let xPos = 1, yPos = 1;
+         function load(){
+             xPos =xPos + xSpeed;
+             yPos += ySpeed;
+            }
+            setInterval(()=>{
+                if(xPos + 100 >= window.innerWidth || xPos <= 0){
+                    xSpeed = -xSpeed;
+                }
+                if(yPos + 100 >= window.innerHeight || yPos <= 0){
+                    ySpeed = -ySpeed;
+                }
+                box.style.left = xPos;
+                box.style.top = yPos;
+                load()
+                // console.log(xPos, yPos, window.innerHeight);
+            },20)
+        </script>
+    </body>
+</html>
